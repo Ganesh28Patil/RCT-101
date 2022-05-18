@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.one{
+  background-color: red;
+}
+.two{
+  background-color: cyan;
+}
+.three{
+  background-color: yellow;
+  border-radius: 10px;
+}
+.four{
+  font-size: 30px;
+  color:red;
+}
