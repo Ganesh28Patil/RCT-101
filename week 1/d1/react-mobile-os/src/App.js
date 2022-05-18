@@ -25,13 +25,9 @@ function App() {
         <div className='ListTxt'>
         {
             info.map((user)=>( 
-           <div key = {user.company}>
-              {/* console.log({user.company}); */}
-            {/* ({user.company} === "Samsung" || {user.company} === "HTC") ? :"Yes":"NO" */}
+           <div key = {user.company}>            
               <List2 {...user}/>
-           </div>        
-       
-          
+           </div>              
             ))
        }
        </div>  
@@ -41,6 +37,9 @@ function App() {
 }
 
 export default App;
+
+
+
   //  {/* (user.company === "Samsung" || user.company === "HTC") ? 
   //          ( <div key = {user.company}>
   //             <List2 {...user}/>  </div>) : (user.company === "Apple" ) ? 
