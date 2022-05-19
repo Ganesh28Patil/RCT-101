@@ -1,0 +1,11 @@
+
+.todo{
+    display: flex;
+    max-width: 100%; 
+    /* border: 2px solid green; */
+    justify-content: center;
+    padding: 2px;
+}
+.striked{
+    text-decoration: line-through;
+}
