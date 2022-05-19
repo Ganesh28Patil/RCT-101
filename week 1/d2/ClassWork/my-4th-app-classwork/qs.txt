@@ -1,0 +1,36 @@
+# Revision
+
+- Algorithem?
+A: set of instructions, exected step by step 
+
+- What is React ?
+A: It is a JS library used to build UI.
+
+- Why do we use react ?
+A: Simple, declarative, component-based, fast and re-usable. 
+
+- What is JSK ?
+A: HTNL/XML code inside JS code. 
+
+- What is a component ?
+A: A JS function that returns HTML/XML code
+
+- What is Virtual DOM ?
+A:  Shallow Copy of our actual DOM 
+    It compares & only update what need to be upadted
+
+    // Original DOM
+    <div> Hello </div>
+
+    //change 
+    <div>Hello, Ganesh</div>
+
+    //vdom
+    <div>Hello</div>
+
+    div text:hello
+
+    // change 
+    <div> Hello Ritesh</div>
+
+    change text: hello, Ritesh
