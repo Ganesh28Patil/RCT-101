@@ -29,6 +29,7 @@ const Todo = () => {
       <>
       <div>
       <div>Todo</div>
+      {/* Input tag */}
       <input 
         value={newValue}
         // whatever change happens in input tag 
@@ -38,6 +39,7 @@ const Todo = () => {
           setTodos([...todos,{id:Date.now(),value:newValue,isCheked:false}]); //we write this id:'unique' -> for child key Error
           setNewValue("");
       }}}/>
+      {/*Add button */}
       <button onClick={()=>{
         //   console.log(newValue);         
           setTodos([...todos,{id:Date.now(),value:newValue,isCheked:false}]); //we write this id:'unique' -> for child key Error
