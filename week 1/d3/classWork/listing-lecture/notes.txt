@@ -1,0 +1,22 @@
+      
+      <div></div>
+      <div>{true}</div>
+      <div>{false}</div>
+      <div>{null}</div>
+      <div>{undefined}</div>
+      <div>{null}</div>
+
+
+      this all will behave as empty string
+      ------------------------------------------
+      
+      HOF Higher Order Function 
+
+       map    -> [1,2,3].map((i)=>(i*5))  = [5,10,15]     
+                 the Size of Input & Output is always same
+       filter -> [1,2,3,4].filter((i)=>(i>2)) = [3,4]            
+                 filter out the data based on the condition that you written
+       reduce ->              
+                 map & filter together    
+                let r = [1,2,3,4,5].reduce(((acc,crr)=> (acc+crr)),0);
+                console.log(r); //  15
