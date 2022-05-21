@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.sqr{
+  border: 2px solid rgb(24, 229, 24);
+  text-align: center;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+  margin-top: 10px;
+}
+button{
+  margin: 5px;
+}
+.toggle{
+  border-color: blueviolet;
+}
+.counter{
+  border-color: red;
+}

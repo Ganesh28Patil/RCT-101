@@ -20,3 +20,5 @@
                  map & filter together    
                 let r = [1,2,3,4,5].reduce(((acc,crr)=> (acc+crr)),0);
                 console.log(r); //  15
+
+       forEach             
