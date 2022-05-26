@@ -1,0 +1,54 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Todo 1",
+      "isCompleted": true
+    },
+    {
+      "id": 2,
+      "text": "Todo 2",
+      "isCompleted": true
+    },
+    {
+      "id": 3,
+      "text": "Todo 3",
+      "isCompleted": true
+    },
+    {
+      "text": "Todo 4",
+      "isCompleted": false,
+      "id": 4
+    },
+    {
+      "text": "todo 5",
+      "isCompleted": false,
+      "id": 5
+    },
+    {
+        "id": 6,
+        "text": "Todo 6",
+        "isCompleted": true
+      },
+      {
+        "id": 7,
+        "text": "Todo 7",
+        "isCompleted": true
+      },
+      {
+        "id": 8,
+        "text": "Todo 8",
+        "isCompleted": true
+      },
+      {
+        "text": "Todo 9",
+        "isCompleted": false,
+        "id": 9
+      },
+      {
+        "text": "todo 10",
+        "isCompleted": false,
+        "id":10 
+      }
+  ]
+}
