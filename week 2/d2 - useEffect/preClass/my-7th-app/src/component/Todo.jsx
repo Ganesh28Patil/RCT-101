@@ -9,8 +9,8 @@ const Todo = () => {
 
 React.useEffect(() => {
     // effect
-    fetch("http://localhost:1111/todos")
-    .then((r)=>r.json).then((d)=>{console.log(d)})
+    fetch("http://localhost:8080/todos")
+    .then((r)=>(r.json())).then((d)=>{console.log("d: ",d)})
     return () => {
         // cleanup
     };

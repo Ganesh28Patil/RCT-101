@@ -10,17 +10,25 @@ const App2 = () => {
   return (
         <>
               <h1>----App2----</h1>
-              {/* {!showCounter && 'hello'} */}
-             {showCounter && <Counter />}
-             <br />
-             <button onClick={()=>setShowCounter(!showCounter)}>Show</button>
+              <div>
+                    {`${ console.log("----------------todo app----------------")}`}
+                    <Todo  />
+              </div>
+              <div>
+                  {/* {!showCounter && 'hello'} */}
+                  {showCounter && <Counter />}
+                           <br />
+                           <button onClick={()=>setShowCounter(!showCounter)}>Show</button>
+              </div>
+              <div>
+                   {`${ console.log("-----------------example---------------")}`}
+                   <Example />
+              </div>
             
-             `${ console.log("-----------------example---------------")}`
 
-             <Example />
-             `${ console.log("----------------todo app----------------")}`
-                  <Todo  />
 
+           
+           
         </>
   )
 }
