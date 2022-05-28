@@ -1,72 +1,67 @@
 import React from 'react'
 
-
-
 const Todo = () => {
-    const [title,setTitle] = React.useState() ;
-    const [data, setData] = React.useState([]);
-    const [isLoading,setIsLoading] = React.useState(true);
-    const [isError,setIsError] = React.useState(false);
+  const [text,setText] = React.useState("");
+  const [data,setData] = React.useState([]);
+  const [isLoading,setIsLoading] = React.useState(true);
+  const [isError,setIsError] = React.useState(false);
+  const [page,setPage] = React.useState(1);
+  // let lastPage = data.length;
+  React.useEffect(() => {
+    getData(page);   
+  }, [page]);
 
-
-React.useEffect(() => {
-    // effect
-   getData();
-    return () => {
-     // cleanup
-    };
-}, []);
-  const getData = (data) => {
-        setIsLoading(true);
-        return   fetch("http://localhost:8080/todos")
-                   .then((r)=>(r.json()))
-                     .then((d)=>{console.log("d: ",d);setData(d)})
-                     .catch((error)=>setIsError(false))
-                       .finally(()=>setIsLoading(false))
+ 
+  const getData = (page = 1) =>{
+    setIsLoading(true);
+  
+    
+    return  fetch(`http://localhost:8080/todos?_page=${page}&_limit=4`)
+               .then((res)=>(res.json()))
+                .then((d)=>(setData(d)))
+                  .catch((err)=>(setIsError(true)))
+                    .finally(()=>(setIsLoading(false)))
   }
-
-  const addData = (title) =>{
-    const payLoad = {
-      title,
-      status:false,
+  
+  const addData = (text)=>{
+    setIsLoading(true);
+    const payload = {
+      text,
+      iScompleted:false
     }
-         setIsLoading(true);
-          return   fetch("http://localhost:8080/todos",{
-                     method:"POST",
-                     headers:{"Content-Type":"application/json"},
-                     body:JSON.stringify(payLoad),
-                   })
-                     .then((r)=>(r.json()))
-                      //  .then((d)=>{console.log("d: ",d);setData(d)})
-                        .then((d)=>(getData())) 
-                         .catch((error)=>setIsError(false))
-                           .finally(()=>setIsLoading(false))
-  }
-
+    return  fetch("http://localhost:8080/todos",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify(payload)
+              })
+               .then((res)=>(res.json()))
+                .then((d)=>(getData()))      // note this step
+                  .catch((err)=>(setIsError(true)))
+                    .finally(()=>(setIsLoading(false)))
+  }   
   return (
-    <>
+   <>
      {
-       (isLoading) ?
-        (<h6>  ..... Loading </h6>) :
-         (isError) ?
-          (<h5> Something went wrong </h5>) :         
-            (
-              <>
-              <div>
-                 <div>Todo</div>
-                 <input value={title}  onChange = {()=>setTitle(()=>((e)=>(e.target.value)))} placeholder="Enter Something"/>
-                 <button onClick={()=>addData(title)}>Add</button>  
-              </div>
-              <div>
-                  {
-                    data.map((item)=>(<li key={item.id}>{item.text}</li>))
-                  }
-              </div>
-              </>
-            )
-      }
-    </>
+        (isLoading) ? (<b>...loading</b>) : (isError) ?  (<b>Somthing went wrong</b>) :  
+       (<div>
+              
+            <input value={text} onChange={(e)=>setText(e.target.value)} placeholder="Add something ..."/>
+            <button onClick={()=>addData(text)}>Add</button>
+            <ul>{data.map((item)=>(<li key={item.id}>{`${item.text}`}</li>))}</ul>
+            <div>
+               
+               
+                <button disabled={page===1} onClick={()=>setPage(page-1)}>PREV</button>
+                <i>Page : {page} </i> 
+                <button onClick={()=>setPage(page+1)}>NEXT</button>
+            </div>
+           
+       </div>)
+     }
+   </>
   )
 }
 
 export default Todo
+
+
