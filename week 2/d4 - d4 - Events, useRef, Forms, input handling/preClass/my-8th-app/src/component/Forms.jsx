@@ -2,7 +2,7 @@ import React from 'react'
 
 const Forms = () => {
     const initailState = {
-        name:"",
+        firstName:"",
         email:"",
         age:""
     }

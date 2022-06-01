@@ -20,22 +20,27 @@ const ConditionalRendering = () => {
         }, 1200);
     }
   return (
-    <>
+    <>  
+                  <h6>---- Conditional Rendering -----</h6>
+
       {
         (isLoading) ? (<div>...loading</div>) :
           (isError) ? 
           (<div>
                 <div> something went wrong </div> 
-                <button onClick={fetchData}>do you want to fetch data Again ?</button>
+                <button onClick={fetchData}>...do you want to fetch data Again ?</button>
           </div>) :
              (<div>
-                  <h6>---- Conditional Rendering -----</h6>
+                  {/* <h6>---- Conditional Rendering -----</h6> */}
                   <button onClick={fetchData}>FETCH DATA</button>
-                  <button onClick={fetchDataWithError}>FETCH DATA With Error</button>
-                  <button onClick={()=>setShow((value) => !value)}>TOGGLE SHOWING DATE</button>
-                  <br  />
+                  <button onClick={fetchDataWithError}>FETCH DATA With Error</button> <br />
+                  {/* <button onClick={()=>setShow((value) => !value)}>TOGGLE SHOWING DATE</button> */}                  
                   {/* {(show && new Date().toLocaleString())} */}
-                  {(show) ? new Date().toLocaleString() : "Press 👆 ⬆️  button  🔘    to get Hidden Date" }
+
+                  <button onClick={()=>setShow((value) => !value)}>
+                     { show ?  "Hide 👉 " :"TOGGLE SHOWING DATE"  }
+                  </button>
+                  {(show) ? new Date().toLocaleString() : " 👈 Press    button  🔘    to get Hidden Date" }
              </div>)
       }  
         

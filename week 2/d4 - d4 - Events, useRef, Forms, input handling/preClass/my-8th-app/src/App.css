@@ -8,3 +8,8 @@
 *{
   margin: 5px;
 }
+.App > div{
+  border: 2px solid greenyellow;
+  padding: 5px;
+  border-radius: 10px;
+ }
