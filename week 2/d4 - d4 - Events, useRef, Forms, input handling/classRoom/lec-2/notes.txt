@@ -1,0 +1,39 @@
+//why
+//where
+//when
+
+1 useState
+-> to create state variable and to re-render dom when the value changes
+2 useEffect
+->  when we want to do something on mounting, updating or unmounting  Phases
+ mounting --> component is mounted succesfull
+ updating --> compoenent is updated
+ unmounting --> (clean-up functions)
+
+3 useRef
+-> when we want to
+   create state varaible which persist the state &
+    do not trigger re-render when updated
+
+
+ topic we covered -->
+ useRef
+ Events
+ Forms
+
+ input
+ file
+ checkbox
+ select
+ radio
+ focus on empty input box on submit(part of small validation)
+ 
+// When the Component is mounted 
+// it goes through following stages
+Compoenent()
+<Compoenent  />
+// hoisting
+// declaration useState
+// assigmnent useState
+// return rendering
+// useEffect

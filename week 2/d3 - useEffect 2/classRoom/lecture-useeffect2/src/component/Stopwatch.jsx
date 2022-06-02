@@ -9,6 +9,7 @@ const Stopwatch = () => {
             setWatch((watch)=>(watch+1))
         },1000);
         setTimerId(id);
+        
     };
     const reset = ()=> {
         clearInterval(timerId)
